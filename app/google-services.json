@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "57830712445",
+    "firebase_url": "https://orderrest-12db6.firebaseio.com",
+    "project_id": "orderrest-12db6",
+    "storage_bucket": "orderrest-12db6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57830712445:android:79cdc04c47790bf8cc3d14",
+        "android_client_info": {
+          "package_name": "com.example.orderrest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57830712445-grrl9ogkejq3ag1hth8i6eoo52ktuuog.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZZB_HPLXT0GSIdHu4DmV5ULW9fuP8AZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57830712445-grrl9ogkejq3ag1hth8i6eoo52ktuuog.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
