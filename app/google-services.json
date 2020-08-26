@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "57830712445-ibco7cceacgs81ivue7sp99naofqfnbi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.orderrest",
+            "certificate_hash": "63c5fdc5e7708dd0d3af7efe650b1797f66aea64"
+          }
+        },
+        {
           "client_id": "57830712445-grrl9ogkejq3ag1hth8i6eoo52ktuuog.apps.googleusercontent.com",
           "client_type": 3
         }

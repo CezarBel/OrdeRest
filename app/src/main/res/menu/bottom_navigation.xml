@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/היסטוריה"
+        android:title="היסטוריה" />
+
+    <item
+        android:id="@+id/מועדפים"
+        android:title="מועדפים"/>
+
+    <item
+        android:id="@+id/ראשי"
+        android:title="ראשי" />
+
+
+
+</menu>

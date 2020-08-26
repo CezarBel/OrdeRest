@@ -15,8 +15,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
+
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
 
     String emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z]+\\.+[a-zA-Z]+";
 
@@ -40,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
         TextCnfPassword = findViewById(R.id.UserPasswordCnfText);
         SighUpButton = findViewById(R.id.SighUpButton);
         LoginText = findViewById(R.id.Login);
+        final LoadingDialog loadingDialog = new LoadingDialog(RegisterActivity.this);
 
         LoginText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,15 +110,27 @@ public class RegisterActivity extends AppCompatActivity {
 
                             }
                             else {
-                                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+                                //realTime Firebase Database
+                                reference = FirebaseDatabase.getInstance().getReference("users");
+                                //all user values for Firebase
+                                String email = TextUserEmail.getText().toString();
+                                String pwd = TextPassword.getText().toString();
+                                String user = TextUserPhoneNum.getText().toString();
+
+                                String id = reference.push().getKey();
+                                UserHelperClass helperClass = new UserHelperClass(email,pwd,user,id);
+                                reference.child(id).setValue(helperClass);
+
+                                //activity starter
+                                loadingDialog.startLoadingAnimation();
+                                Intent LoginIntent = new Intent(RegisterActivity.this,LoginActivity.class);
+                                startActivity(LoginIntent);
+
                             }
                         }
                     });
                 }
-//                else {
-//                    Toast.makeText(RegisterActivity.this,"שגיאה",Toast.LENGTH_SHORT).show();
-//
-//                }
+
             }
         });
 

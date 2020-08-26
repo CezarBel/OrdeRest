@@ -37,18 +37,15 @@ public class LoginActivity extends AppCompatActivity {
         TextPassword = findViewById(R.id.UserPasswordText);
         LoginButton = findViewById(R.id.SighUpButton);
         RegisterText = findViewById(R.id.Login);
+        final LoadingDialog loadingDialog = new LoadingDialog(LoginActivity.this);
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-                if(firebaseUser != null){
-                    Toast.makeText(LoginActivity.this,"החיבור בוצע בהצלחה",Toast.LENGTH_SHORT).show();
-                    Intent goToHome = new Intent(LoginActivity.this,HomeActivity.class);
-                    startActivity(goToHome);
-                }
-                else{
+                if(firebaseUser == null){
                     Toast.makeText(LoginActivity.this,"אינך מחובר",Toast.LENGTH_SHORT).show();
                 }
+
             }
         };
 
@@ -91,6 +88,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             }
                             else {
+                                loadingDialog.startLoadingAnimation();
                                 Intent goHome = new Intent(LoginActivity.this,HomeActivity.class);
                                 startActivity(goHome);
                             }
