@@ -3,15 +3,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/היסטוריה"
-        android:title="היסטוריה" />
+        android:title="היסטוריה"
+        android:icon="@drawable/history_icon"/>
 
     <item
         android:id="@+id/מועדפים"
-        android:title="מועדפים"/>
+        android:title="מועדפים"
+        android:icon="@drawable/fav_icon"/>
 
     <item
         android:id="@+id/ראשי"
-        android:title="ראשי" />
+        android:title="ראשי"
+        android:icon="@drawable/menu_icon"/>
 
 
 

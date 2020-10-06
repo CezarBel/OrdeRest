@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4D4d4d"
+    android:background="#FFFFFF"
     tools:context=".RegisterActivity">
 
 
     <ImageView
         android:id="@+id/passwordLogo"
-        android:layout_width="49dp"
-        android:layout_height="49dp"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/UserPasswordCnfText"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.703"
+        app:layout_constraintVertical_bias="0.757"
         app:srcCompat="@drawable/passwordicon" />
 
     <TextView
@@ -26,14 +26,14 @@
         android:layout_height="21dp"
         android:gravity="center_horizontal"
         android:text="משתמש רשום?"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SighUpButton"
-        app:layout_constraintVertical_bias="0.205"
+        app:layout_constraintVertical_bias="0.209"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -42,12 +42,12 @@
         android:layout_height="37dp"
         android:layout_marginBottom="4dp"
         android:text="לחץ כאן לכניסה!"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerdUser"
         app:layout_constraintVertical_bias="0.0" />
@@ -56,16 +56,18 @@
         android:id="@+id/SighUpButton"
         android:layout_width="154dp"
         android:layout_height="50dp"
-        android:background="@drawable/round_button"
+        android:background="@drawable/round_org_button"
         android:text="הירשם"
+
         android:textSize="27sp"
         android:textStyle="bold"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.245" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -97,11 +99,52 @@
         app:layout_constraintVertical_bias="0.33" />
 
     <EditText
+        android:id="@+id/UserPhoneNumText"
+        android:layout_width="238dp"
+        android:layout_height="54dp"
+        android:background="@drawable/rounded_style"
+        android:ems="10"
+        android:gravity="center|center_horizontal"
+        android:hint="מספר טלפון"
+        android:inputType="phone"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UserEmailText"
+        app:layout_constraintVertical_bias="0.23" />
+
+    <EditText
+        android:id="@+id/UserNameText"
+        android:layout_width="238dp"
+        android:layout_height="54dp"
+        android:background="@drawable/rounded_style"
+        android:ems="10"
+        android:gravity="center|center_horizontal"
+        android:hint="שם מלא"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#4D4D4D"
+        android:textSize="27dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.441" />
+
+    <EditText
         android:id="@+id/UserPasswordText"
         android:layout_width="238dp"
         android:layout_height="54dp"
-        android:ems="10"
         android:background="@drawable/rounded_style"
+        android:ems="10"
         android:gravity="center|center_horizontal"
         android:hint="סיסמא"
         android:inputType="textPassword"
@@ -114,7 +157,7 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UserPhoneNumText"
-        app:layout_constraintVertical_bias="0.075" />
+        app:layout_constraintVertical_bias="0.074" />
 
     <EditText
         android:id="@+id/UserPasswordCnfText"
@@ -134,7 +177,7 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UserPasswordText"
-        app:layout_constraintVertical_bias="0.116" />
+        app:layout_constraintVertical_bias="0.093" />
 
     <ImageView
         android:id="@+id/OrderRestLogo"
@@ -146,61 +189,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/orderrest" />
+        app:srcCompat="@drawable/logo2" />
+
+    <ImageView
+        android:id="@+id/EmailIcon"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/UserEmailText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.33"
+        app:srcCompat="@drawable/mail_icon" />
 
     <ImageView
         android:id="@+id/UserLogo"
-        android:layout_width="49dp"
-        android:layout_height="49dp"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.026"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toEndOf="@+id/UserEmailText"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.328"
+        app:layout_constraintVertical_bias="0.441"
         app:srcCompat="@drawable/usericon" />
 
     <ImageView
         android:id="@+id/PasswordLogo"
-        android:layout_width="49dp"
-        android:layout_height="49dp"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/UserPasswordText"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.567"
+        app:layout_constraintVertical_bias="0.652"
         app:srcCompat="@drawable/passwordicon" />
 
-    <EditText
-        android:id="@+id/UserPhoneNumText"
-        android:layout_width="238dp"
-        android:layout_height="54dp"
-        android:ems="10"
-        android:gravity="center|center_horizontal"        android:hint="מספר טלפון"
-        android:background="@drawable/rounded_style"
-        android:inputType="phone"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="27sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UserEmailText"
-        app:layout_constraintVertical_bias="0.067" />
+
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="49dp"
-        android:layout_height="49dp"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/UserPhoneNumText"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445"
+        app:layout_constraintVertical_bias="0.546"
         app:srcCompat="@drawable/phonelogo" />
 
 

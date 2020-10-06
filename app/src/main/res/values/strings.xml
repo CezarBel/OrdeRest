@@ -13,7 +13,16 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="home_second">Home Second</string>
-
+    <string name="title_activity_map_benedict">Map</string>
+    <string name="title_activity_map_hamburg">Map</string>
+    <string name="title_activity_map_sunset">Map</string>
+    <string name="title_activity_map_hanasi">Map</string>
+    <string name="title_activity_map_archie">Map</string>
+    <string name="title_activity_map_aroma">Map</string>
+    <string name="title_activity_map_landwer">Map</string>
+    <string name="title_activity_map_cafecafe">Map</string>
+    <string name="title_activity_map_japanica">Map</string>
+    <string name="title_activity_map_pizzahut">Map</string>
 
 
 </resources>

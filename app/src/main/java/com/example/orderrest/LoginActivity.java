@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity {
     String emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z]+\\.+[a-zA-Z]+";
 
+    EditText TextUserName;
     EditText TextUserEmail;
     EditText TextPassword;
     Button LoginButton;
@@ -33,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         firebaseAuthSignIn = FirebaseAuth.getInstance();
+        TextUserName = findViewById(R.id.UserNameText);
         TextUserEmail = findViewById(R.id.UserEmailText);
         TextPassword = findViewById(R.id.UserPasswordText);
         LoginButton = findViewById(R.id.SighUpButton);
@@ -79,6 +81,10 @@ public class LoginActivity extends AppCompatActivity {
                     TextPassword.setError("הכנס סיסמא");
                     TextPassword.requestFocus();
                 }
+                else if (pwd.length() < 8 ){
+                    TextPassword.setError("סיסמא לא נכונה");
+                    TextPassword.requestFocus();
+                }
                 else if(!(email.isEmpty() && pwd.isEmpty())){
                     firebaseAuthSignIn.signInWithEmailAndPassword(email,pwd).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -100,7 +106,9 @@ public class LoginActivity extends AppCompatActivity {
 
                 }
             }
+
         });
+
     }
 
     @Override

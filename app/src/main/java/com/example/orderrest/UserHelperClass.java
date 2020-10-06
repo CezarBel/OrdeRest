@@ -1,16 +1,20 @@
 package com.example.orderrest;
 
 public class UserHelperClass {
-    String email,phoneNo,password,id;
+    String email;
+    String userName;
+    String phoneNo;
+    String password;
 
     public UserHelperClass() {
     }
 
-    public UserHelperClass(String email, String phoneNo, String password,String id) {
+    public UserHelperClass(String email, String userName, String phoneNo,String password) {
         this.email = email;
+        this.userName = userName;
         this.phoneNo = phoneNo;
         this.password = password;
-        this.id = id;
+
     }
 
     public String getEmail() {
@@ -19,6 +23,14 @@ public class UserHelperClass {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPhoneNo() {
@@ -37,11 +49,4 @@ public class UserHelperClass {
         this.password = password;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 }

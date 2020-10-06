@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
-        <item android:id="@+id/profile"
-            android:title="פרופיל"
-            android:icon="@drawable/profile_icon"/>
+        <item
 
-        <item android:id="@+id/history_clean"
-            android:title="מחיקת היסטוריה"
+            android:id="@+id/profile"
+            android:icon="@drawable/profile_icon"
+            android:title="פרופיל" />
+
+        <item
+            android:id="@+id/history_clean"
             android:icon="@drawable/history_icon"
-            />
+            android:title="מחיקת היסטוריה" />
 
-        <item android:id="@+id/add_res"
-            android:title="הוספת עסק חדש"
-            android:icon="@drawable/add_icon"/>
-
-        <item android:id="@+id/settings"
-            android:title="הגדרות"
-            android:icon="@drawable/setting_icon"/>
     </group>
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/add_res"
+            android:icon="@drawable/add_icon"
+            android:title="הוספת עסק חדש" />
+    </group>
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/logout_icon"
+            android:title="התנתק" />
+    </group>
+
+
 </menu>

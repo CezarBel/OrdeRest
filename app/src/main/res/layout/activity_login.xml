@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
     tools:context=".LoginActivity"
-    android:background="@drawable/background2">
+    android:background="@drawable/aback2">
 
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_height="21dp"
         android:gravity="center_horizontal"
         android:text="משתמש חדש"
-        android:textColor="#FFFFFF"
+        android:textColor="#ffffff"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +31,7 @@
         android:layout_height="37dp"
         android:layout_marginBottom="4dp"
         android:text="לחץ כאן להרשמה!"
-        android:textColor="#FFFFFF"
+        android:textColor="#ffffff"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -67,7 +67,7 @@
         android:id="@+id/UserEmailText"
         android:layout_width="238dp"
         android:layout_height="54dp"
-        android:background="@drawable/rounded_style"
+        android:background="@drawable/rounded_gray"
         android:ems="10"
         android:gravity="center|center_horizontal"
         android:hint="אימייל"
@@ -88,7 +88,7 @@
         android:id="@+id/UserPasswordText"
         android:layout_width="238dp"
         android:layout_height="54dp"
-        android:background="@drawable/rounded_style"
+        android:background="@drawable/rounded_gray"
         android:ems="10"
         android:gravity="center"
         android:hint="סיסמא"
@@ -113,8 +113,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/orderrest" />
+        app:layout_constraintVertical_bias="0.143"
+        app:srcCompat="@drawable/logo2" />
 
     <ImageView
         android:id="@+id/UserLogo"

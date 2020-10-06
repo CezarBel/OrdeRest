@@ -24,7 +24,7 @@ public class RegisterActivity extends AppCompatActivity {
     DatabaseReference reference;
 
     String emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z]+\\.+[a-zA-Z]+";
-
+    EditText TextUserName;
     EditText TextUserEmail;
     EditText TextPassword;
     EditText TextUserPhoneNum;
@@ -39,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         firebaseAuthSighUp = FirebaseAuth.getInstance();
+        TextUserName = findViewById(R.id.UserNameText);
         TextUserEmail = findViewById(R.id.UserEmailText);
         TextUserPhoneNum = findViewById(R.id.UserPhoneNumText);
         TextPassword = findViewById(R.id.UserPasswordText);
@@ -58,14 +59,19 @@ public class RegisterActivity extends AppCompatActivity {
         SighUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String userName = TextUserName.getText().toString();
                 String email = TextUserEmail.getText().toString();
                 String pwd = TextPassword.getText().toString();
                 String userPhone = TextUserPhoneNum.getText().toString();
                 String cnfPwd = TextCnfPassword.getText().toString();
 
-                 if(email.isEmpty() && pwd.isEmpty() && cnfPwd.isEmpty() && userPhone.isEmpty()){
+                 if(email.isEmpty() && pwd.isEmpty() && cnfPwd.isEmpty() && userPhone.isEmpty() && userName.isEmpty()){
                     Toast.makeText(RegisterActivity.this,"השדות ריקים",Toast.LENGTH_SHORT).show();
                 }
+                 else if(userName.isEmpty()){
+                     TextUserName.setError("הכנס שם מלא");
+                     TextUserName.requestFocus();
+                 }
                 else if(email.isEmpty()){
                     TextUserEmail.setError("הכנס אימייל");
                     TextUserEmail.requestFocus();
@@ -107,19 +113,21 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
                                 Toast.makeText(RegisterActivity.this,"ההרשמה נכשלה, נסה שוב",Toast.LENGTH_SHORT).show();
-
                             }
                             else {
                                 //realTime Firebase Database
-                                reference = FirebaseDatabase.getInstance().getReference("users");
+                                rootNode = FirebaseDatabase.getInstance();
+                                reference = rootNode.getReference("Users");
+
+
                                 //all user values for Firebase
                                 String email = TextUserEmail.getText().toString();
+                                String userName = TextUserName.getText().toString();
+                                String userNo = TextUserPhoneNum.getText().toString();
                                 String pwd = TextPassword.getText().toString();
-                                String user = TextUserPhoneNum.getText().toString();
 
-                                String id = reference.push().getKey();
-                                UserHelperClass helperClass = new UserHelperClass(email,pwd,user,id);
-                                reference.child(id).setValue(helperClass);
+                                UserHelperClass helperClass = new UserHelperClass(email,userName,userNo,pwd);
+                                reference.child(userNo).setValue(helperClass);
 
                                 //activity starter
                                 loadingDialog.startLoadingAnimation();
